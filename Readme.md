@@ -13,11 +13,14 @@ Para rodar o projeto localmente, siga os passos abaixo:
 
 - Node.js instalado em sua máquina
 
-### Passos
+## Instalação do projeto
 
-```bash
-# Instale as dependências do projeto
+```sh
 npm install
+```
 
-# Inicie o servidor de desenvolvimento
+### Iniciar o servidor web
+
+```sh
 npm run dev
+```

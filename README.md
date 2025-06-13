@@ -1,29 +1,26 @@
-# projetofrontendflores
+# Bella Massa 🍝
 
-This template should help get you started developing with Vue 3 in Vite.
+**Bella Massa** é um site simples e funcional para uma loja de massas, contendo:
 
-## Recommended IDE Setup
+- **Página Inicial** com informações sobre a empresa e seu cardápio.
+- **Página de Pedidos** onde os usuários podem selecionar itens e realizar pedidos diretamente pelo site.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🔧 Instalação e Execução
 
-## Customize configuration
+Para rodar o projeto localmente, siga os passos abaixo:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Pré-requisitos
 
-## Project Setup
+- Node.js instalado em sua máquina
+
+## Instalação do projeto
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Iniciar o servidor web
 
 ```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
 ```
