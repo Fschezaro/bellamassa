@@ -12,7 +12,7 @@
       <nav class="space-x-6 hidden md:block">
         <a href="#sabores" class="font-medium text-red-700 hover:text-red-900 transition">Sabores</a>
         <a href="#contato" class="font-medium text-red-700 hover:text-red-900 transition">Contato</a>
-        <a href="#pedido" class="font-medium bg-red-600 text-white px-4 py-2 rounded-xl shadow hover:bg-red-700 transition">Peça Agora</a>
+        <RouterLink class="font-medium bg-red-600 text-white px-4 py-2 rounded-xl shadow hover:bg-red-700 transition" to="/makeorder">Peça Agora</RouterLink>
       </nav>
     </div>
   </header>
