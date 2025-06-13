@@ -75,12 +75,13 @@
     <span class="font-medium">© 2025 Bella Massa Pizzaria | Feito com ♥ em sua cidade</span>
   </footer>
 
-<ModalCart :open="cartOpen" :cart="cart" @close="cartOpen = false" @remove="removeFromCart"/>
+<ModalCart :open="cartOpen" :cart="cart" @close="cartOpen = false" @remove="removeFromCart" @clean="cleanCart" @success="successMessage"/>
 
 </template>
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import ModalCart from '@/components/ModalCart.vue'
+import { useToast } from "vue-toastification";
 
 // Defina os produtos (use o mesmo nome do botão para evitar erros)
 const produtos = [
@@ -91,7 +92,7 @@ const produtos = [
   { name: "Frango c/ Cat.", price: 46.90 },
   { name: "Vegetariana", price: 43.90 },
 ]
-
+const toast = useToast();
 const cartOpen = ref(false)
 const cart = ref([])
 
@@ -108,5 +109,13 @@ function addToCart(name, price) {
 // Função para remover do carrinho
 function removeFromCart(index) {
   cart.value.splice(index, 1)
+}
+
+function cleanCart(){
+  cart.value = []
+}
+
+function successMessage(){
+  toast.success("Pedido enviado!");
 }
 </script>

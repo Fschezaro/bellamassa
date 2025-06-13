@@ -27,7 +27,7 @@
           <span>Total:</span>
           <span>R$ {{ total.toFixed(2) }}</span>
         </div>
-        <button class="w-full mt-6 bg-red-600 text-white font-bold py-3 rounded-xl shadow hover:bg-red-700 transition">
+        <button class="w-full mt-6 bg-red-600 text-white font-bold py-3 rounded-xl shadow hover:bg-red-700 transition" @click="enviarPedido">
           Finalizar Pedido
         </button>
       </div>
@@ -55,6 +55,39 @@ const changeQty = (index, amount) => {
     emit('remove', index) // Remove o item se quantidade ficar 0 ou menos
   } else {
     item.qty += amount
+  }
+}
+
+const enviarPedido = async () => {
+  if (!props.cart.length) {
+    alert('O carrinho está vazio!')
+    return
+  }
+
+  // Estrutura do pedido
+  const pedido = {
+    data: new Date().toISOString(),
+    total: total.value,
+    itens: props.cart.map(item => ({
+      nome: item.name,
+      quantidade: item.qty,
+      preco: item.price
+    }))
+  }
+
+  try {
+    const res = await fetch('http://localhost:3000/pedidos', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(pedido)
+    })
+
+    if (!res.ok) throw new Error('Erro ao enviar pedido')
+    emit('success')
+    emit('close')
+    emit('clean')
+  } catch (err) {
+    alert('Erro: ' + err.message)
   }
 }
 </script>
