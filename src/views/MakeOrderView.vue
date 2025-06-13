@@ -2,7 +2,7 @@
 <header class="bg-white/90 shadow sticky top-0 z-20">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
         <div class="flex items-center space-x-2">
-            <span class="text-2xl font-extrabold text-red-700">Bella Massa</span>
+          <router-link to="/"><span class="text-2xl font-extrabold text-red-700">Bella Massa</span></router-link>
         </div>
         <div class="flex items-center space-x-6">
             <nav class="hidden md:block">
@@ -13,13 +13,10 @@
     </div>
   </header>
 
-  <!-- Sabores Section -->
   <main id="sabores" class="py-16 flex-1">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-bold text-red-800 text-center mb-10">Escolha sua pizza</h2>
       <div class="grid md:grid-cols-3 gap-8">
-
-        <!-- Pizza 1 -->
         <div class="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center">
           <img src="../assets/img/margarita.jpg" alt="Pizza Margherita" class="w-32 h-32 rounded-full mb-4 object-cover shadow">
           <h3 class="text-xl font-semibold text-red-700 mb-2">Margherita</h3>
@@ -27,7 +24,6 @@
           <span class="font-bold text-red-800 text-lg mb-4">R$ 39,90</span>
           <button class="bg-red-600 text-white px-6 py-2 rounded-full font-bold shadow hover:bg-red-700 transition w-full mt-auto"  @click="addToCart('Margherita', 39.90)">Adicionar ao carrinho</button>
         </div>
-        <!-- Pizza 2 -->
         <div class="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center">
           <img src="../assets/img/calabresa.jpg" alt="Pizza Calabresa" class="w-32 h-32 rounded-full mb-4 object-cover shadow">
           <h3 class="text-xl font-semibold text-red-700 mb-2">Calabresa</h3>
@@ -35,7 +31,6 @@
           <span class="font-bold text-red-800 text-lg mb-4">R$ 44,90</span>
           <button class="bg-red-600 text-white px-6 py-2 rounded-full font-bold shadow hover:bg-red-700 transition w-full mt-auto"  @click="addToCart('Calabresa', 44.90)">Adicionar ao carrinho</button>
         </div>
-        <!-- Pizza 3 -->
         <div class="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center">
           <img src="../assets/img/4queijos.jpg" alt="Pizza Quatro Queijos" class="w-32 h-32 rounded-full mb-4 object-cover shadow">
           <h3 class="text-xl font-semibold text-red-700 mb-2">Quatro Queijos</h3>
@@ -43,7 +38,6 @@
           <span class="font-bold text-red-800 text-lg mb-4">R$ 47,90</span>
           <button class="bg-red-600 text-white px-6 py-2 rounded-full font-bold shadow hover:bg-red-700 transition w-full mt-auto"  @click="addToCart('Quatro Queijos', 47.90)">Adicionar ao carrinho</button>
         </div>
-        <!-- Pizza 4 -->
         <div class="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center">
           <img src="../assets/img/portuguesa.jpg" alt="Pizza Portuguesa" class="w-32 h-32 rounded-full mb-4 object-cover shadow">
           <h3 class="text-xl font-semibold text-red-700 mb-2">Portuguesa</h3>
@@ -51,7 +45,6 @@
           <span class="font-bold text-red-800 text-lg mb-4">R$ 48,90</span>
           <button class="bg-red-600 text-white px-6 py-2 rounded-full font-bold shadow hover:bg-red-700 transition w-full mt-auto" @click="addToCart('Portuguesa', 48.90)">Adicionar ao carrinho</button>
         </div>
-        <!-- Pizza 5 -->
         <div class="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center">
           <img src="../assets/img/frango com catupiry.jpg" alt="Pizza Frango com Catupiry" class="w-32 h-32 rounded-full mb-4 object-cover shadow">
           <h3 class="text-xl font-semibold text-red-700 mb-2">Frango com Catupiry</h3>
@@ -59,7 +52,6 @@
           <span class="font-bold text-red-800 text-lg mb-4">R$ 46,90</span>
           <button class="bg-red-600 text-white px-6 py-2 rounded-full font-bold shadow hover:bg-red-700 transition w-full mt-auto" @click="addToCart('Frango c/ Cat', 46.90)">Adicionar ao carrinho</button>
         </div>
-        <!-- Pizza 6 -->
         <div class="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center">
           <img src="../assets/img/vegetariana.jpg" alt="Pizza Vegetariana" class="w-32 h-32 rounded-full mb-4 object-cover shadow">
           <h3 class="text-xl font-semibold text-red-700 mb-2">Vegetariana</h3>
@@ -70,16 +62,13 @@
       </div>
     </div>
   </main>
-  <!-- Footer -->
-  <footer class="bg-red-700 text-white text-center py-4 mt-auto">
-    <span class="font-medium">© 2025 Bella Massa Pizzaria | Feito com ♥ em sua cidade</span>
-  </footer>
-
+  <Footer />
 <ModalCart :open="cartOpen" :cart="cart" @close="cartOpen = false" @remove="removeFromCart" @clean="cleanCart" @success="successMessage"/>
 
 </template>
 <script setup>
-import { onMounted, ref } from 'vue'
+import Footer from '@/components/Footer.vue';
+import { ref } from 'vue'
 import ModalCart from '@/components/ModalCart.vue'
 import { useToast } from "vue-toastification";
 

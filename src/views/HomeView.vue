@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
   <main class="bg-gradient-to-br from-yellow-100 via-red-100 to-red-200 min-h-screen flex flex-col">
   <!-- Header -->
@@ -9,11 +6,13 @@
       <div class="flex items-center space-x-2">
         <span class="text-2xl font-extrabold text-red-700">🍕 Bella Massa</span>
       </div>
-      <nav class="space-x-6 hidden md:block">
-        <a href="#sabores" class="font-medium text-red-700 hover:text-red-900 transition">Sabores</a>
-        <a href="#contato" class="font-medium text-red-700 hover:text-red-900 transition">Contato</a>
-        <RouterLink class="font-medium bg-red-600 text-white px-4 py-2 rounded-xl shadow hover:bg-red-700 transition" to="/makeorder">Peça Agora</RouterLink>
-      </nav>
+      <div>
+        <nav class="space-x-6 hidden md:block">
+          <a href="#sabores" class="font-medium text-red-700 hover:text-red-900 transition">Sabores</a>
+          <a href="#contato" class="font-medium text-red-700 hover:text-red-900 transition">Contato</a>
+          <RouterLink class="font-medium bg-red-600 text-white px-4 py-2 rounded-xl shadow hover:bg-red-700 transition" to="/makeorder">Peça Agora</RouterLink>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -54,7 +53,7 @@
         </div>
       </div>
       <div class="text-center mt-12">
-        <RouterLink class="bg-red-600 text-white px-8 py-3 rounded-full shadow-lg font-bold text-lg hover:bg-red-700 transition" to="/makeorder">          Quero pedir!</RouterLink>
+        <RouterLink class="bg-red-600 text-white px-8 py-3 rounded-full shadow-lg font-bold text-lg hover:bg-red-700 transition" to="/makeorder">Quero pedir!</RouterLink>
       </div>
     </div>
   </section>
@@ -80,10 +79,9 @@
       </form>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="bg-red-700 text-white text-center py-4 mt-auto">
-    <span class="font-medium">© 2025 Bella Massa Pizzaria | Feito com ♥ em sua cidade</span>
-  </footer>
+  <Footer />
   </main>
 </template>
+<script setup>
+import Footer from '@/components/Footer.vue';
+</script>
