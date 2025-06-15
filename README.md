@@ -28,9 +28,7 @@ Para rodar o projeto localmente, você precisará ter o **Node.js** instalado. S
 
 Clone o repositório e execute o seguinte comando no terminal para instalar todas as dependências do projeto listadas no `package.json`:
 
-```sh
 npm install
-```
 
 ### 2. Execução do Projeto
 
